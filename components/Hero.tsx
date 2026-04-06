@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Download, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 
 /* ──────────────────────────────────────────
@@ -194,10 +195,12 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-8 relative border-4 border-white/10 overflow-hidden shadow-2xl z-20 bg-black/40"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/userPic1.jpeg"
+          <Image
+            src="/images/userpic1.jpeg"
             alt="Surajit Roy"
+            width={160}
+            height={160}
+            priority
             className="w-full h-full object-cover object-[center_top]"
           />
         </motion.div>
