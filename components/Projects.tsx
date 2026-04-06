@@ -141,7 +141,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
           {/* Image Side — Constrained container for wide images */}
           <div className="w-full lg:w-[45%] relative overflow-hidden order-1 lg:order-none min-h-[240px] md:min-h-[320px] lg:min-h-0">
             {/* Subtle mesh overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/40 via-transparent to-black/10 lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/30 pointer-events-none" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/10 via-transparent to-black/5 lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/10 pointer-events-none" />
             
             {/* Image Container with Parallax */}
             <motion.div 

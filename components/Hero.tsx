@@ -165,13 +165,13 @@ export function Hero() {
     >
       {/* Background Floating Tech Icons with Parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/5 via-background to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/12 via-background to-background" />
 
         {floatingIcons.map(({ Icon, pos, size, rotate, speedIdx }, i) => (
           <motion.div
             key={i}
             style={{ y: yArr[speedIdx] }}
-            className={`absolute ${pos} text-white/[0.04]`}
+            className={`absolute ${pos} text-white/[0.2]`}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
