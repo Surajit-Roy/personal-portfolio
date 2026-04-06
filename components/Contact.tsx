@@ -48,7 +48,7 @@ export function Contact() {
 
           <div className="mt-8 pt-8 border-t border-white/5">
               <div className="text-[10px] text-white/25 uppercase tracking-[0.2em]">
-                © {new Date().getFullYear()} All Rights Reserved | Designed & Engineered with Passion by Surajit Roy
+                © {new Date().getFullYear()} All Rights Reserved | Designed and Engineered with Passion by Surajit Roy
             </div>
           </div>
         </motion.div>
