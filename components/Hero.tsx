@@ -165,7 +165,9 @@ export function Hero() {
     >
       {/* Background Floating Tech Icons with Parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/12 via-background to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/15 via-background to-background opacity-80" />
+        <div className="absolute top-1/4 -left-20 w-[40rem] h-[40rem] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 -right-40 w-[35rem] h-[35rem] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
         {floatingIcons.map(({ Icon, pos, size, rotate, speedIdx }, i) => (
           <motion.div
@@ -188,22 +190,45 @@ export function Hero() {
         style={{ opacity, scale }}
         className="z-10 flex flex-col items-center text-center max-w-4xl mt-12 md:mt-0"
       >
-        {/* Profile Picture Wrapper */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-8 relative border-4 border-white/10 overflow-hidden shadow-2xl z-20 bg-black/40"
-        >
-          <Image
-            src="/images/userpic1.jpeg"
-            alt="Surajit Roy"
-            width={160}
-            height={160}
-            priority
-            className="w-full h-full object-cover object-[center_top]"
-          />
-        </motion.div>
+        {/* Profile Picture Wrapper with Status Indicator */}
+        <div className="relative mb-4">
+          <div className="absolute inset-0 rounded-full bg-white/5 blur-2xl transform scale-150 animate-pulse"></div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-32 h-32 md:w-44 md:h-44 rounded-full relative border border-white/20 p-1 md:p-1.5 overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] z-20 bg-background"
+          >
+            <div className="w-full h-full rounded-full overflow-hidden bg-black/40 relative">
+              <Image
+                src="/images/userpic1.jpeg"
+                alt="Surajit Roy"
+                width={176}
+                height={176}
+                priority
+                className="w-full h-full object-cover object-[center_top] hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5, type: "spring" }}
+            className="absolute bottom-2 right-2 md:bottom-4 md:right-4 flex items-center justify-center z-30 bg-background rounded-full p-1.5 border border-white/10 shadow-lg group cursor-help"
+            title="Available for new opportunities"
+          >
+            <div className="relative flex h-3.5 w-3.5 md:h-4 md:w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 md:h-4 md:w-4 bg-emerald-500"></span>
+            </div>
+            <div className="absolute top-full mt-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-white text-black text-xs font-semibold px-3 py-1.5 rounded pointer-events-none shadow-xl transform translate-x-1/4">
+              Available for new roles
+              <div className="absolute -top-1 right-8 w-2 h-2 bg-white rotate-45"></div>
+            </div>
+          </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -218,7 +243,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 mb-6"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/30 mb-4 pb-2"
         >
           Surajit Roy
         </motion.h1>
@@ -231,14 +256,14 @@ export function Hero() {
         >
           Mobile Application Developer
           <span className="mx-2 opacity-30 block md:inline">|</span>
-          iOS & Flutter Specialist
+          iOS & Flutter
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-lg text-white/50 mb-12 max-w-xl leading-relaxed px-4"
+          className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl leading-relaxed px-4 font-light text-center text-balance"
         >
           I build scalable, high-performance mobile apps used by thousands of users.
           Delivering premium user experiences with modern tech.
@@ -248,15 +273,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-6"
+          className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto px-6"
         >
-          <a href="#projects" className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-black rounded-full font-semibold hover:scale-105 active:scale-95 transition-all w-full sm:w-auto">
-            View Projects
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <a href="#projects" className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            Explore My Work
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-          <a href="/Surajit-Roy-CV.pdf" download className="group flex items-center justify-center gap-2 px-8 py-4 border border-white/20 glass text-white rounded-full font-medium hover:bg-white/5 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto">
+          <a href="/Surajit-Roy-CV.pdf" download className="group flex items-center justify-center gap-3 px-8 py-4 border border-white/15 bg-white/5 backdrop-blur-sm text-white/90 rounded-full font-medium hover:bg-white/10 hover:border-white/30 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto">
             Download Resume
-            <Download className="w-4 h-4" />
+            <Download className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
           </a>
         </motion.div>
       </motion.div>

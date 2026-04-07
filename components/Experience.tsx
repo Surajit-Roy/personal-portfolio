@@ -13,7 +13,7 @@ const experiences = [
       "Maintained strict security guidelines and clean architecture standards for highly sensitive user financial data.",
       "Collaborated with cross-functional teams to drastically reduce technical debt while shipping frequent feature updates."
     ],
-    tech: ["iOS", "Flutter", "Swift", "Dart", "Payment SDKs"]
+    tech: ["iOS", "Flutter", "Swift", "Dart", "Payment SDKs", "Payment Gateway Integration", "Fintech", "Agile", "Jira", "Git"]
   }
 ];
 

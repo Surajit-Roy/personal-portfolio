@@ -12,9 +12,9 @@ const projects = [
     impact: "Built real-time synchronization reducing discrepancy issues by 99%.",
     github: "https://github.com/Surajit-Roy/expenseBuddy",
     image: "/projects/ExpenseBuddy.png",
-    gradient: "from-blue-500/20 via-indigo-500/10 to-violet-500/5",
+    gradient: "from-blue-600/25 via-indigo-600/15 to-violet-600/5",
     accentGradient: "from-blue-400 to-indigo-400",
-    glowColor: "rgba(99, 102, 241, 0.15)",
+    glowColor: "rgba(99, 102, 241, 0.2)",
     number: "01"
   },
   {
@@ -24,9 +24,9 @@ const projects = [
     impact: "Implemented scalable Firebase backend to support rapid catalog expansion and heavy traffic loads.",
     github: "https://github.com/Surajit-Roy/emart",
     image: "/projects/eMart_wallpaper.jpg",
-    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/5",
+    gradient: "from-emerald-600/25 via-teal-600/15 to-cyan-600/5",
     accentGradient: "from-emerald-400 to-teal-400",
-    glowColor: "rgba(20, 184, 166, 0.15)",
+    glowColor: "rgba(20, 184, 166, 0.2)",
     number: "02"
   },
   {
@@ -36,9 +36,9 @@ const projects = [
     impact: "Significantly improved UI micro-interactions, resulting in a more premium checkout feel and higher conversion potential.",
     github: "https://github.com/Surajit-Roy/iOS-dynamic-card-form",
     image: "/projects/DynamicCardProject.gif",
-    gradient: "from-purple-500/20 via-pink-500/10 to-rose-500/5",
+    gradient: "from-purple-600/25 via-pink-600/15 to-rose-600/5",
     accentGradient: "from-purple-400 to-pink-400",
-    glowColor: "rgba(168, 85, 247, 0.15)",
+    glowColor: "rgba(168, 85, 247, 0.2)",
     number: "03"
   }
 ];
@@ -173,8 +173,9 @@ export function Projects() {
     <section id="projects" className="py-28 md:py-36 px-6 bg-background relative overflow-hidden">
       {/* Subtle Background Accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-indigo-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-20 left-0 w-[400px] h-[400px] bg-teal-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-indigo-500/[0.08] blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-blue-500/[0.08] blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/[0.05] blur-[160px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

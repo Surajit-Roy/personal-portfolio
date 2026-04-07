@@ -34,8 +34,9 @@ const skillCategories = [
 export function Skills() {
   return (
     <section id="skills" className="py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-background relative border-t border-white/5 overflow-hidden">
-      {/* Subtle background glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] md:w-[40rem] md:h-[40rem] bg-indigo-500/5 rounded-full blur-[100px] md:blur-[120px] pointer-events-none -z-10" />
+      {/* Vibrant background glow effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[35rem] h-[35rem] md:w-[45rem] md:h-[45rem] bg-indigo-600/10 rounded-full blur-[120px] md:blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25rem] h-[25rem] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none -z-10" />
       
       <div className="max-w-6xl mx-auto">
         <motion.div 
@@ -69,8 +70,8 @@ export function Skills() {
               transition={{ delay: idx * 0.1, duration: 0.5, ease: "easeOut" }}
               className="group relative p-6 md:p-8 rounded-[2rem] border border-white/10 bg-white/[0.02] backdrop-blur-sm overflow-hidden hover:bg-white/[0.04] transition-all duration-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.05)]"
             >
-              {/* Subtle hover gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+              {/* Vibrant hover gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center gap-3.5 md:gap-4 mb-3 md:mb-4">
