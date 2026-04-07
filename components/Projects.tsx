@@ -75,21 +75,21 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
         {/* Content Layout */}
-        <div className={`relative z-10 flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[480px] md:min-h-[520px]`}>
+        <div className={`relative z-10 flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[360px] md:min-h-[520px]`}>
           
           {/* Text Content Side */}
           <motion.div 
             style={{ opacity: contentOpacity }}
-            className="w-full lg:w-[55%] flex flex-col justify-center p-8 md:p-12 lg:p-16 gap-6 order-2 lg:order-none"
+            className="w-full lg:w-[55%] flex flex-col justify-center p-6 md:p-12 lg:p-16 gap-4 md:gap-6 order-2 lg:order-none"
           >
             {/* Project Number & Tech Tags */}
-            <div className="flex items-center gap-4 flex-wrap">
-              <span className={`text-5xl font-black bg-gradient-to-br ${project.accentGradient} bg-clip-text text-transparent opacity-30 leading-none`}>
+            <div className="flex items-center gap-3 md:gap-4 flex-wrap">
+              <span className={`text-4xl md:text-5xl font-black bg-gradient-to-br ${project.accentGradient} bg-clip-text text-transparent opacity-30 leading-none`}>
                 {project.number}
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {project.tech.map(t => (
-                  <span key={t} className="text-[11px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white/70">
+                  <span key={t} className="text-[9px] md:text-[11px] font-semibold tracking-widest uppercase px-2.5 py-1 md:px-3 md:py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/50 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white/70">
                     {t}
                   </span>
                 ))}
@@ -97,53 +97,50 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
             </div>
             
             {/* Title */}
-            <h4 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+            <h4 className="text-2xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight leading-tight">
+              <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent text-balance">
                 {project.title}
               </span>
             </h4>
             
-            {/* Description */}
-            <p className="text-white/50 leading-relaxed text-base md:text-lg font-light max-w-lg">
+            {/* Description - Compact on mobile */}
+            <p className="text-white/50 leading-relaxed text-sm md:text-lg font-light max-w-lg line-clamp-3 md:line-clamp-none">
               {project.desc}
             </p>
             
-            {/* Impact Callout */}
+            {/* Impact Callout - Smaller on mobile */}
             <div className={`relative rounded-xl overflow-hidden`}>
-              <div className={`absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b ${project.accentGradient} rounded-full`} />
-              <div className="bg-white/[0.03] backdrop-blur-sm p-4 pl-5">
-                <p className="text-sm leading-relaxed">
+              <div className={`absolute left-0 top-0 bottom-0 w-[2px] md:w-[3px] bg-gradient-to-b ${project.accentGradient} rounded-full`} />
+              <div className="bg-white/[0.03] backdrop-blur-sm p-3 md:p-4 pl-4 md:pl-5">
+                <p className="text-xs md:text-sm leading-relaxed">
                   <span className={`font-semibold bg-gradient-to-r ${project.accentGradient} bg-clip-text text-transparent mr-2`}>Impact</span>
                   <span className="text-white/70">{project.impact}</span>
                 </p>
               </div>
             </div>
-
+ 
             {/* Action Buttons */}
-            <div className="flex items-center gap-5 pt-2">
+            <div className="flex items-center gap-5 pt-1 md:pt-2">
               {project.github && (
                 <a 
                   href={project.github} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="group/btn flex items-center gap-2.5 text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
+                  className="group/btn flex items-center gap-2.5 text-xs md:text-sm font-medium text-white/50 hover:text-white transition-all duration-300"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/[0.03] group-hover/btn:border-white/20 group-hover/btn:bg-white/[0.08] transition-all duration-300">
-                    <Github className="w-4 h-4" />
+                  <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 bg-white/[0.03] group-hover/btn:border-white/20 group-hover/btn:bg-white/[0.08] transition-all duration-300">
+                    <Github className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   </div>
                   <span className="group-hover/btn:translate-x-0.5 transition-transform duration-300">Source Code</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-300" />
                 </a>
               )}
             </div>
           </motion.div>
-
-          {/* Image Side — Constrained container for wide images */}
-          <div className="w-full lg:w-[45%] relative overflow-hidden order-1 lg:order-none min-h-[240px] md:min-h-[320px] lg:min-h-0">
-            {/* Subtle mesh overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/10 via-transparent to-black/5 lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/10 pointer-events-none" />
+ 
+          {/* Image Side — Smaller on mobile */}
+          <div className="w-full lg:w-[45%] relative overflow-hidden order-1 lg:order-none min-h-[180px] md:min-h-[320px] lg:min-h-0 bg-white/[0.02]">
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent md:to-black/5 lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/10 pointer-events-none" />
             
-            {/* Image Container with Parallax */}
             <motion.div 
               style={{ y: imageY }} 
               className="absolute inset-0 w-full h-[120%] -top-[10%]"
@@ -157,10 +154,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                 />
               </div>
             </motion.div>
-
-            {/* Corner decorators */}
-            <div className="absolute top-4 right-4 z-20 w-12 h-12 border-t border-r border-white/[0.06] rounded-tr-xl pointer-events-none" />
-            <div className="absolute bottom-4 left-4 z-20 w-12 h-12 border-b border-l border-white/[0.06] rounded-bl-xl pointer-events-none" />
           </div>
         </div>
       </div>
@@ -170,7 +163,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 
 export function Projects() {
   return (
-    <section id="projects" className="py-28 md:py-36 px-6 bg-background relative overflow-hidden">
+    <section id="projects" className="py-16 md:py-36 px-6 bg-background relative overflow-hidden">
       {/* Subtle Background Accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-indigo-500/[0.08] blur-[140px] rounded-full pointer-events-none" />
@@ -184,7 +177,7 @@ export function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-20 md:mb-28"
+          className="mb-12 md:mb-28"
         >
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
@@ -209,9 +202,9 @@ export function Projects() {
             </p>
           </div>
         </motion.div>
-
+ 
         {/* Project Cards */}
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-8 md:space-y-20">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} index={idx} project={project} />
           ))}
